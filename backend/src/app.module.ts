@@ -6,6 +6,7 @@ import { PrismaModule } from './prisma/prisma.module';
 import { AuthModule } from './auth/auth.module';
 import { ProjectModule } from './project/project.module';
 import { PostModule } from './post/post.module';
+import { ReferenceModule } from './reference/reference.module';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { PostModule } from './post/post.module';
     AuthModule,
     ProjectModule,
     PostModule,
+    ReferenceModule,
   ],
   controllers: [AppController],
   providers: [AppService],
