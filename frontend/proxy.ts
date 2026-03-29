@@ -1,21 +1,19 @@
 import { auth } from "@/lib/auth"
 import { NextResponse } from "next/server"
 
-export default auth((req) => {
-  const { nextUrl, auth: session } = req
-  const isLoggedIn = !!session
-
-  const isAdminRoute = nextUrl.pathname.startsWith("/admin")
-  const isLoginPage = nextUrl.pathname === "/admin/login"
+export const proxy = auth((req) => {
+  const isLoggedIn = !!req.auth
+  const isAdminRoute = req.nextUrl.pathname.startsWith("/admin")
+  const isLoginPage = req.nextUrl.pathname === "/admin/login"
 
   // If trying to access admin routes without being logged in
   if (isAdminRoute && !isLoginPage && !isLoggedIn) {
-    return NextResponse.redirect(new URL("/admin/login", nextUrl))
+    return Response.redirect(new URL("/admin/login", req.nextUrl.origin))
   }
 
   // If already logged in and trying to access login page
   if (isLoginPage && isLoggedIn) {
-    return NextResponse.redirect(new URL("/admin", nextUrl))
+    return Response.redirect(new URL("/admin", req.nextUrl.origin))
   }
 
   return NextResponse.next()
