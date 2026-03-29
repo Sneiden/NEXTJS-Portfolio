@@ -7,6 +7,7 @@ import { AuthModule } from './auth/auth.module';
 import { ProjectModule } from './project/project.module';
 import { PostModule } from './post/post.module';
 import { ReferenceModule } from './reference/reference.module';
+import { ContactModule } from './contact/contact.module';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { ReferenceModule } from './reference/reference.module';
     ProjectModule,
     PostModule,
     ReferenceModule,
+    ContactModule,
   ],
   controllers: [AppController],
   providers: [AppService],
