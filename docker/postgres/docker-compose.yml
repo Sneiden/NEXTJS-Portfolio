@@ -4,7 +4,7 @@ services:
     container_name: portfolio_db
     restart: unless-stopped
     environment:
-      POSTGRES_USER: portfolio
+      POSTGRES_USER: CMSUser
       POSTGRES_PASSWORD: ${DB_PASSWORD}
       POSTGRES_DB: portfolio
     ports:
