@@ -16,10 +16,10 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
 
         try {
           const response = await fetch(
-            `${process.env.BACKEND_URL}/auth/login`,
+            `${process.env.BACKEND_URL ?? 'http://localhost:3333'}/auth/login`,
             {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({
                 email: credentials.email,
                 password: credentials.password,
@@ -31,7 +31,7 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
 
           const user = await response.json()
           return user
-        } catch {
+        } catch (error) {
           return null
         }
       },
