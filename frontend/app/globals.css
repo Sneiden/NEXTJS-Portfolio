@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+:root {
+  --font-serif: var(--font-serif);
+  --font-mono: var(--font-mono);
+}
