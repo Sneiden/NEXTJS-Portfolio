@@ -40,6 +40,17 @@ model Post {
   author    User     @relation(fields: [authorId], references: [id])
 }
 
+model Profile {
+  id               String   @id @default(cuid())
+  name             String
+  title            String
+  bio              String   @db.Text
+  availableForWork Boolean  @default(true)
+  skills           Json     // [{ category: string, items: string[] }]
+  socialLinks      Json     // { github?: string, linkedin?: string, email?: string }
+  updatedAt        DateTime @updatedAt
+}
+
 model Project {
   id          String   @id @default(cuid())
   title       String

@@ -8,6 +8,7 @@ import { ProjectModule } from './project/project.module';
 import { PostModule } from './post/post.module';
 import { ReferenceModule } from './reference/reference.module';
 import { ContactModule } from './contact/contact.module';
+import { ProfileModule } from './profile/profile.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { ContactModule } from './contact/contact.module';
     PostModule,
     ReferenceModule,
     ContactModule,
+    ProfileModule,
   ],
   controllers: [AppController],
   providers: [AppService],
