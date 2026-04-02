@@ -45,6 +45,10 @@ export class UpdateProfileDto {
   bio?: string
 
   @IsOptional()
+  @IsString()
+  imageUrl?: string
+
+  @IsOptional()
   @IsBoolean()
   availableForWork?: boolean
 

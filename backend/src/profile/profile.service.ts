@@ -22,6 +22,7 @@ export class ProfileService {
   }
 
   async updateProfile(dto: UpdateProfileDto) {
+
     const skills = dto.skills
       ? (dto.skills as unknown as Prisma.InputJsonValue)
       : undefined
@@ -36,6 +37,7 @@ export class ProfileService {
         ...(dto.name !== undefined && { name: dto.name }),
         ...(dto.title !== undefined && { title: dto.title }),
         ...(dto.bio !== undefined && { bio: dto.bio }),
+        ...(dto.imageUrl !== undefined && { imageUrl: dto.imageUrl }),
         ...(dto.availableForWork !== undefined && { availableForWork: dto.availableForWork }),
         ...(skills !== undefined && { skills }),
         ...(socialLinks !== undefined && { socialLinks }),
@@ -45,6 +47,7 @@ export class ProfileService {
         name: dto.name ?? '',
         title: dto.title ?? '',
         bio: dto.bio ?? '',
+        imageUrl: dto.imageUrl ?? '',
         availableForWork: dto.availableForWork ?? true,
         skills: (dto.skills ?? []) as unknown as Prisma.InputJsonValue,
         socialLinks: (dto.socialLinks ?? {}) as unknown as Prisma.InputJsonValue,

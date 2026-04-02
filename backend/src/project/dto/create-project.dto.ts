@@ -1,4 +1,5 @@
 import {
+  IsArray,
   IsBoolean,
   IsNotEmpty,
   IsOptional,
@@ -23,9 +24,14 @@ export class CreateProjectDto {
   @IsNotEmpty()
   content: string;
 
+  @IsOptional()
   @IsString()
-  @IsNotEmpty()
   imageUrl: string;
+
+  @IsOptional()
+  @IsArray()
+  @IsString({ each: true })
+  images?: string[]   // ← new — array of screenshot URLs
 
   @IsUrl()
   @IsOptional()

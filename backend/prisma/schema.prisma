@@ -45,6 +45,7 @@ model Profile {
   name             String
   title            String
   bio              String   @db.Text
+  imageUrl         String?
   availableForWork Boolean  @default(true)
   skills           Json     // [{ category: string, items: string[] }]
   socialLinks      Json     // { github?: string, linkedin?: string, email?: string }
@@ -57,7 +58,8 @@ model Project {
   slug        String   @unique
   description String
   content     String
-  imageUrl    String
+  imageUrl    String?
+  images      String[]
   liveUrl     String?
   repoUrl     String?
   featured    Boolean  @default(false)
