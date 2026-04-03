@@ -13,6 +13,7 @@
     "target": "ES2023",
     "sourceMap": true,
     "outDir": "./dist",
+    // "ignoreDeprecations": "6.0", // added so baseUrl can be used in tsconfig without deprecation warning, will be removed in TS 6.0
     "baseUrl": "./",
     "incremental": true,
     "skipLibCheck": true,

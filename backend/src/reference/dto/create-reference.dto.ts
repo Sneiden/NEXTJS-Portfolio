@@ -10,11 +10,11 @@ import {
 export class CreateReferenceDto {
   @IsString()
   @IsNotEmpty()
-  name: string;
+  name!: string;
 
   @IsString()
   @IsNotEmpty()
-  role: string;
+  role!: string;
 
   @IsString()
   @IsOptional()
@@ -22,7 +22,7 @@ export class CreateReferenceDto {
 
   @IsString()
   @IsNotEmpty()
-  comment: string;
+  comment!: string;
 
   @IsEmail()
   @IsOptional()

@@ -10,11 +10,11 @@ import { Type } from 'class-transformer'
 
 export class SkillGroupDto {
   @IsString()
-  category: string
+  category!: string
 
   @IsArray()
   @IsString({ each: true })
-  items: string[]
+  items!: string[]
 }
 
 export class SocialLinksDto {

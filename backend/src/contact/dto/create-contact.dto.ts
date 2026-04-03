@@ -8,11 +8,11 @@ import {
 export class CreateContactDto {
   @IsString()
   @IsNotEmpty()
-  name: string;
+  name!: string;
 
   @IsEmail()
   @IsNotEmpty()
-  email: string;
+  email!: string;
 
   @IsString()
   @IsOptional()
@@ -20,5 +20,5 @@ export class CreateContactDto {
 
   @IsString()
   @IsNotEmpty()
-  message: string;
+  message!: string;
 }

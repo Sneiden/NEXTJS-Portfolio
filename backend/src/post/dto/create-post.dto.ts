@@ -8,15 +8,15 @@ import {
 export class CreatePostDto {
   @IsString()
   @IsNotEmpty()
-  title: string;
+  title!: string;
 
   @IsString()
   @IsNotEmpty()
-  slug: string;
+  slug!: string;
 
   @IsString()
   @IsNotEmpty()
-  content: string;
+  content!: string;
 
   @IsString()
   @IsOptional()

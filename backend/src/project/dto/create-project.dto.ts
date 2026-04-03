@@ -10,23 +10,23 @@ import {
 export class CreateProjectDto {
   @IsString()
   @IsNotEmpty()
-  title: string;
+  title!: string;
 
   @IsString()
   @IsNotEmpty()
-  slug: string;
+  slug!: string;
 
   @IsString()
   @IsNotEmpty()
-  description: string;
+  description!: string;
 
   @IsString()
   @IsNotEmpty()
-  content: string;
+  content!: string;
 
   @IsOptional()
   @IsString()
-  imageUrl: string;
+  imageUrl!: string;
 
   @IsOptional()
   @IsArray()

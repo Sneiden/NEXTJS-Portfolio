@@ -108,7 +108,7 @@ export function ProfileForm({ initialData, onSave }: ProfileFormProps) {
       skills: prev.skills.filter((_, gi) => gi !== groupIndex),
     }))
   }
-
+  
   return (
     <form onSubmit={handleSubmit} className="space-y-10">
 
@@ -179,6 +179,7 @@ export function ProfileForm({ initialData, onSave }: ProfileFormProps) {
               setData({ ...data, availableForWork: checked })
             }
           />
+
           <Label htmlFor="availableForWork" className="font-mono text-xs">
             Available for work
           </Label>

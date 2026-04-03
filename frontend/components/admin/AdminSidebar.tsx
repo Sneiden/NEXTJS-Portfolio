@@ -3,13 +3,7 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
-import {
-  LayoutDashboard,
-  User,
-  FolderKanban,
-  Quote,
-  Inbox,
-} from "lucide-react"
+import { LayoutDashboard, User, FolderKanban, Quote, Inbox } from "lucide-react"
 
 const navItems = [
   { href: "/admin",            label: "Dashboard",  icon: LayoutDashboard },
@@ -23,10 +17,10 @@ export function AdminSidebar() {
   const pathname = usePathname()
 
   return (
-    <aside className="flex h-full w-60 flex-col border-r border-neutral-200 bg-white">
+    <aside className="flex h-full w-60 flex-col border-r border-(--color-border) bg-(--color-surface)">
       {/* Logo */}
-      <div className="flex h-16 items-center border-b border-neutral-200 px-6">
-        <span className="font-mono text-sm font-medium tracking-widest uppercase text-neutral-900">
+      <div className="flex h-16 items-center border-b border-(--color-border) px-6">
+        <span className="font-mono text-sm font-medium tracking-widest uppercase text-(--color-accent)">
           CMS
         </span>
       </div>
@@ -34,7 +28,6 @@ export function AdminSidebar() {
       {/* Nav */}
       <nav className="flex flex-col gap-1 p-3 flex-1">
         {navItems.map(({ href, label, icon: Icon }) => {
-          // exact match for dashboard, prefix match for everything else
           const isActive =
             href === "/admin"
               ? pathname === "/admin"
@@ -45,10 +38,10 @@ export function AdminSidebar() {
               key={href}
               href={href}
               className={cn(
-                "flex items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors",
+                "flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm transition-all duration-200",
                 isActive
-                  ? "bg-neutral-900 text-white"
-                  : "text-neutral-500 hover:bg-neutral-100 hover:text-neutral-900"
+                  ? "bg-(--color-accent) text-white shadow-sm"
+                  : "text-(--color-text-muted) hover:bg-(--color-accent-muted) hover:text-(--color-accent)"
               )}
             >
               <Icon size={16} />
@@ -59,8 +52,8 @@ export function AdminSidebar() {
       </nav>
 
       {/* Footer */}
-      <div className="border-t border-neutral-200 px-6 py-4">
-        <p className="font-mono text-[10px] tracking-widest text-neutral-400 uppercase">
+      <div className="border-t border-(--color-border) px-6 py-4">
+        <p className="font-mono text-[10px] tracking-widest text-(--color-text-muted) uppercase">
           Portfolio CMS
         </p>
       </div>
