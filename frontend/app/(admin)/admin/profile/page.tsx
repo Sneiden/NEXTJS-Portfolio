@@ -101,14 +101,12 @@ export default async function AdminProfilePage() {
   }
 
   return (
-    <div className="space-y-8 max-w-3xl">
-      <div>
-        <h1 className="font-serif text-3xl text-neutral-900">Profile</h1>
-        <p className="font-mono text-xs text-neutral-400 mt-1 tracking-wider uppercase">
-          Controls Hero + About sections on the public site
-        </p>
+    <div className="mx-auto max-w-6xl w-full space-y-6">
+      <div className="flex flex-col gap-1 border-b pb-6">
+        <h1 className="font-serif text-4xl text-(--color-text-primary)">Profile</h1>
+        <p className="font-mono text-xs text-muted-foreground uppercase">Controls Hero + About sections on the public site</p>
       </div>
-
+      
       <ProfileForm initialData={initialData} onSave={saveProfile} />
     </div>
   )

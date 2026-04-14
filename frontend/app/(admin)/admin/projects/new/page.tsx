@@ -40,13 +40,14 @@ export default function NewProjectPage() {
   }
 
   return (
-    <div className="space-y-8 max-w-3xl">
-      <div>
-        <h1 className="font-serif text-3xl text-(--color-text-primary)">New Project</h1>
-        <p className="font-mono text-xs text-(--color-text-muted) mt-1 tracking-wider uppercase">
-          Create a new portfolio project
+    <div className="mx-auto max-w-6xl w-full space-y-6">
+      <div className="flex flex-col gap-1 border-b pb-6">
+        <h1 className="font-serif text-4xl text-(--color-text-primary)">New Project</h1>
+        <p className="font-mono text-xs text-muted-foreground uppercase tracking-widest">
+          Portfolio Management System / Projects
         </p>
       </div>
+
       <ProjectForm mode="create" onSave={createProject} />
     </div>
   )

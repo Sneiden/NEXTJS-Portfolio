@@ -3,6 +3,8 @@ import { Geist, Geist_Mono, IBM_Plex_Mono, Playfair_Display } from "next/font/go
 import { ThemeProvider } from "@/components/ThemeProvider"
 import "./globals.css"
 
+import { cn } from "@/lib/utils"
+
 // Geist is the font that comes with the Nova shadcn/ui preset
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -44,9 +46,10 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} ${ibmMono.variable}`}
+      // className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} ${ibmMono.variable}`}
+      className={cn("antialiased", "h-full", geistSans.variable, geistMono.variable, playfair.variable, ibmMono.variable)}
     >
-      <body className="antialiased">
+      <body className="antialiased h-full overflow-hidden">
         <ThemeProvider>
           {children}
         </ThemeProvider>

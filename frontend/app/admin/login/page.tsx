@@ -27,7 +27,8 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
   const { error } = await searchParams
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-muted/40">
+    // <div className="flex min-h-screen items-center justify-center bg-muted/40">
+    <div className="flex min-h-screen items-center justify-center">
       <Card className="w-full max-w-sm">
         <CardHeader>
           <CardTitle className="text-2xl">Admin Login</CardTitle>

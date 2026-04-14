@@ -7,8 +7,8 @@ export default function AdminDashboardPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="font-serif text-3xl text-neutral-900">Dashboard</h1>
-        <p className="font-mono text-xs text-neutral-400 mt-1 tracking-wider uppercase">
+        <h1 className="font-serif text-3xl">Dashboard</h1>
+        <p className="font-mono text-xs mt-1 tracking-wider uppercase">
           Overview
         </p>
       </div>
@@ -20,14 +20,14 @@ export default function AdminDashboardPage() {
           { label: "Messages", value: "—" },
           { label: "Available", value: "Yes" },
         ].map((card) => (
-          <Card key={card.label} className="rounded-none border-neutral-200">
+          <Card key={card.label} className="rounded-none">
             <CardHeader className="pb-2">
-              <CardTitle className="font-mono text-xs text-neutral-400 uppercase tracking-wider">
+              <CardTitle className="font-mono text-xs uppercase tracking-wider">
                 {card.label}
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="font-serif text-3xl text-neutral-900">{card.value}</p>
+              <p className="font-serif text-3xl">{card.value}</p>
             </CardContent>
           </Card>
         ))}
