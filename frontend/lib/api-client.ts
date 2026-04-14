@@ -107,6 +107,9 @@ export const apiClient = {
   // Public — fetch all published testimonials/references
   getReferences: () => request<object[]>("/references"),
 
+  getAdminReferences: (token: string) =>
+    request<object[]>("/references/admin", { token }),
+
   // Protected — create a new reference (requires admin token)
   createReference: (data: unknown, token: string) =>
     request<object>("/references", { method: "POST", body: data, token }),
@@ -135,4 +138,7 @@ export const apiClient = {
   // Protected — mark a message as read in the admin inbox (requires admin token)
   markAsRead: (id: string, token: string) =>
     request<object>(`/contact/${id}/read`, { method: "PATCH", token }),
+
+  deleteMessage: (id: string, token: string) =>
+    request<void>(`/contact/${id}`, { method: "DELETE", token }),
 }
